@@ -1,0 +1,13 @@
+{
+  "name": "user-profile-card-generator",
+  "version": "1.0.0",
+  "description": "Form-based User Profile Card Generator using Node.js and Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
