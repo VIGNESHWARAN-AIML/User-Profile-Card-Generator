@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Create a professional user profile card with server-side processing.">
+<title>ProfileForge | User Profile Card Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+
+<header class="navbar">
+  <a class="brand" href="/">
+    <span class="brand-mark">P</span>
+    <span>ProfileForge</span>
+  </a>
+  <span class="status-pill"><span></span> Server powered</span>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">PROFILE CARD GENERATOR</span>
+      <h1>Turn your details into a <span>beautiful profile.</span></h1>
+      <p>Create a polished developer profile card in seconds. Your form is processed on the Node.js server and stored for later access.</p>
+      <div class="hero-points">
+        <span>✦ Server-side rendering</span>
+        <span>✦ Persistent records</span>
+        <span>✦ Responsive design</span>
+      </div>
+    </div>
+
+    <section class="form-card">
+      <div class="form-head">
+        <div>
+          <h2>Create your profile</h2>
+          <p>Fill in the details below.</p>
+        </div>
+        <div class="step">01 / 01</div>
+      </div>
+
+      <form action="/profile" method="POST" id="profileForm">
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" placeholder="e.g. Vigneshwaran D" maxlength="80" required>
+        </div>
+
+        <div class="field">
+          <label for="bio">Short Bio</label>
+          <textarea id="bio" name="bio" rows="3" maxlength="240" placeholder="Tell people what you do..." required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="skills">Skills <small>comma separated</small></label>
+          <input id="skills" name="skills" type="text" placeholder="HTML, CSS, JavaScript, Node.js" maxlength="240" required>
+        </div>
+
+        <div class="two-col">
+          <div class="field">
+            <label for="github">GitHub</label>
+            <input id="github" name="github" type="text" placeholder="github.com/username">
+          </div>
+          <div class="field">
+            <label for="linkedin">LinkedIn</label>
+            <input id="linkedin" name="linkedin" type="text" placeholder="linkedin.com/in/username">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="portfolio">Portfolio <small>optional</small></label>
+          <input id="portfolio" name="portfolio" type="text" placeholder="yourportfolio.com">
+        </div>
+
+        <button class="generate-btn" type="submit">
+          Generate Profile Card <span>→</span>
+        </button>
+      </form>
+    </section>
+  </section>
+
+  <section class="preview-section">
+    <div class="section-label">
+      <span>LIVE PREVIEW</span>
+      <span>Updates as you type</span>
+    </div>
+
+    <article class="profile-card preview-card" id="previewCard">
+      <div class="avatar" id="previewAvatar">V</div>
+      <div class="profile-main">
+        <span class="eyebrow">PROFILE PREVIEW</span>
+        <h2 id="previewName">Your Name</h2>
+        <p class="bio" id="previewBio">Your short professional bio will appear here.</p>
+        <div class="skills" id="previewSkills">
+          <span class="skill">Your Skill</span>
+          <span class="skill">Another Skill</span>
+        </div>
+        <div class="socials" id="previewSocials">
+          <span class="muted-link">GitHub</span>
+          <span class="muted-link">LinkedIn</span>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer>ProfileForge • Node.js + Express • Dynamic HTML Rendering</footer>
+<script src="script.js"></script>
+</body>
+</html>
